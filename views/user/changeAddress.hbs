@@ -1,0 +1,63 @@
+<!-- Breadcrumb Section Begin -->
+<section class="breadcrumb-section set-bg" data-setbg="img/breadcrumb-bg.jpg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <div class="breadcrumb-text">
+                    <h2>Choose Address</h2>
+                    <div class="bt-option">
+                        <a href="./index.html">Home</a>
+                        <a href="#">User</a>
+                        <span>Choose Address</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Breadcrumb Section End -->
+
+<section style="background: #151515; ">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6 col-md-12 mt-5">
+                <table class="table  border-dark" id="adminProductsTable" style="background: #151515;">
+                    <thead class="t-head text-center" style="color: #c4c4c4;">
+                        <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">Address</th>
+                            <th scope="col">Contact</th>
+                            <th scope="col">City</th>
+                            <th scope="col">State</th>
+                            <th scope="col">Pincode</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead> 
+                    <tbody class="t-body" style="font-size: smaller; color: #c4c4c4;">
+                        {{#each allAddress}}
+                        <tr>
+                            <td class="text-center table-data">{{this.name}}</td>
+                            <td class="text-center table-data">{{this.address}}</td>
+                            <td class="text-center table-data">{{this.phone}}</td>
+                            <td class="text-center table-data">{{this.city}}</td>
+                            <td class="text-center table-data">{{this.state}}</td>
+                            <td class="text-center table-data">{{this.pincode}}</td>
+                        <td>
+                             </div>
+                        <a href="/changed-address/{{this._id}}" class="primary-btn btn-normal appoinment-btn">select</a>
+                    </div>
+                        </td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    $(function () {
+        $('#adminProductsTable').DataTable();
+    }); 
+</script>

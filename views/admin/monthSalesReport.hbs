@@ -1,0 +1,102 @@
+<!-- Breadcrumb Section Begin -->
+<section class="breadcrumb-section set-bg" data-setbg="/img/breadcrumb-bg.jpg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <div class="breadcrumb-text">
+                    <h2>monthly Report</h2>
+                    <div class="bt-option">
+                        <a href="./index.html">Home</a>
+                        <a href="#">Admin</a>
+                        <span>Monthly Report</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Breadcrumb Section End -->
+
+<section style="background: #151515; ">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6 col-md-12 mt-5">
+                <div style="height: 50px;width: 100%; display: flex; align-items: center;justify-content: center;" class="mb-5">
+                
+                    <a href="/admin/weekly_report" class="primary-btn btn-normal appoinment-btn mr-2">weekly report</a>
+                    {{!-- <a href="" class="primary-btn btn-normal appoinment-btn ml-2 mr-2">monthly report</a> --}}
+                    <a href="/admin/yearly_report" class="primary-btn btn-normal appoinment-btn">yearly report</a>
+                </div>
+                {{!-- <div style="height: 50px;width: 100%; display: flex; align-items: center;" class="container mb-5">
+                
+                    <a href="/admin/week-report" class="primary-btn btn-normal appoinment-btn">Today's Total Revenue: {{todayTotalAmt}}</a>
+                    <a href="/admin/month-report" class="primary-btn btn-normal appoinment-btn ml-auto">Today's Total Sale: {{todaySaleCount}}</a>
+                    <a href="/admin/month-report" class="primary-btn btn-normal appoinment-btn ml-auto">Monthly Total Revenue: {{lastMonthSale}} </a>
+                    <a href="/admin/year-report" class="primary-btn btn-normal appoinment-btn ml-auto">Monthly Total Sale: {{lastMthCount}} </a>
+                </div> --}}
+                <table class="table  border-dark" id="adminProductsTable" style="background: #151515;">
+                    <thead class="t-head text-center" style="color: #c4c4c4; text-transform: uppercase; ">
+                        <tr>
+                            <th scope="col">Date</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Address</th>
+                            <th scope="col">Contact</th>
+                            <th scope="col">State</th>
+                            <th scope="col">Pincode</th>
+                            <th scope="col">Amount</th>
+                            <th scope="col">Payment</th>
+                            <th scope="col">Status</th>
+                            {{!-- <th scope="col">Change Status</th>
+                            <th scope="col">Action</th> --}}
+                        </tr>
+                    </thead>
+                    <tbody class="t-body" style="font-size: 16px; color: #fff; font-weight: 600;">
+                        {{#each response}}
+                        <tr>
+                            <td class="text-center table-data">{{this.date}}</td>
+                            <td class="text-center table-data">{{this.deliveryDetails.name}}</td>
+                            <td class="text-center table-data">{{this.deliveryDetails.address}}</td>
+                            <td class="text-center table-data">{{this.deliveryDetails.phone}}</td>
+                            <td class="text-center table-data">{{this.deliveryDetails.state}}</td>
+                            <td class="text-center table-data">{{this.deliveryDetails.pincode}}</td>
+                            <td class="text-center table-data">{{this.totalAmount}}</td>
+                            <td class="text-center table-data">{{this.paymentMethod}}</td>
+                            <td class="text-center table-data">{{this.status}}</td>
+                            {{!-- <td class="text-center table-data">
+                                <form action="/admin/modifyOrders" method="post" enctype="multipart/form-data" id="checkout-form">
+                                    <input type="text" name="orderId" id="" value="{{this._id}}" hidden>
+                                    <select
+                                        style="background: #151515; color: #fff; font-weight: 600; font-size: 16px; width: 8rem; height: 2rem;"
+                                        name="status" id="">
+                                        <option value="Choose">Choose...</option>
+                                        <option value="Shipped">Shipped</option>
+                                        <option value="Cancelled">Cancelled</option>
+                                        <option value="Delivered">Delivered</option>
+                                        <option value="Returned">Returned</option>
+                                    </select>
+                                    <button style="margin-top: -1px; padding: 11px 30px 11px; margin-right: -5rem;"
+                                        class="primary-btn btn-normal appoinment-btn">Modify</button>
+
+                                </form>
+                            </td> --}}
+
+                            {{!-- <td> --}}
+            </div>
+            {{!-- <button style="margin-top: -1px; padding: 11px 30px 11px; margin-right: 25px;"
+                class="primary-btn btn-normal appoinment-btn">Modify</button> --}}
+        </div>
+        {{!-- </td> --}}
+        </tr>
+        {{/each}}
+        </tbody>
+        </table>
+    </div>
+    </div>
+    </div>
+</section>
+
+<script>
+    $(function () {
+        $('#adminProductsTable').DataTable();
+    }); 
+</script>

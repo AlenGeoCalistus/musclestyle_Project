@@ -1,0 +1,61 @@
+<!-- Breadcrumb Section Begin -->
+    <section class="breadcrumb-section set-bg" data-setbg="/img/breadcrumb-bg.jpg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="breadcrumb-text">
+                        <h2>Image zoom</h2>
+                        <div class="bt-option">
+                            <a href="./index.html">Home</a>
+                            <a href="#">User</a>
+                            <span>Image Zoom</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Breadcrumb Section End -->
+
+
+<section style="background: #151515;">
+    <br>
+    <br>
+    <br>
+    <div style="background:#151515 ;" class="container "> 
+        <div class="row">
+           
+            <div class="col-md-3" >
+                <div id="img-container" class="card" style="width: 40rem; height; ">
+                    <img src="/product-images/{{product._id}}.jpg" class="card-img-top" alt="..."
+                            style="12rem; margin-top:2rem ">
+                    <div class="card-body">
+                        <h5 style="font-weight: bold;" class="card-title">{{product.brand}}</h5>
+                        <h6 style="font-weight: bold;" class="card-title">{{product.name}}
+                            </h6>
+                        <h6 style="font-weight: bold;" class="card-title">{{product.category}}</h6>
+                        <p style="color: #151515; font-weight: bold;" class="card-text">{{product.discription}}</p>
+                        <p style="color: #151515; font-weight: bold;"><i class="fas fa-rupee-sign"></i>{{product.price}}</p>
+                        <a style="background-color: #151515; height: 2.5rem; width: 8rem;" href="/detailed-view" class="primary-btn btn-normal border-dark text-center bi bi-chevron-compact-left appoinment-btn">Go back</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<script>
+
+    var options = {
+        width: 400,
+        height: 400,
+        zoomWidth: 1000,
+        offset: { vertical: 0, horizontal: 5 },
+        scale: 1.4
+    }
+
+    new ImageZoom(document.getElementById("img-container"), options)
+
+</script>
+  

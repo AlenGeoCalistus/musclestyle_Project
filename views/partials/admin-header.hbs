@@ -1,0 +1,207 @@
+<!-- Offcanvas Menu Section Begin -->
+<div class="offcanvas-menu-overlay"></div>
+<div class="offcanvas-menu-wrapper">
+    <div class="canvas-close">
+        <i class="fa fa-close"></i>
+    </div>
+    <div class="canvas-search search-switch">
+        <i class="bi bi-search"></i>
+    </div>
+    <nav class="canvas-menu mobile-menu">
+        <ul>
+            <li><a href="/admin">Home</a></li>
+            {{!-- <li><a href="./classes.html">Classes</a></li>
+            <li><a href="/view-products">Nutrition & Supplements</a></li>
+            <li><a href="./team.html">Coaches</a></li>
+            <li><a href="./about-us.html">Blogs</a></li>
+            <li><a href="./contact.html">Contact</a></li> --}}
+            <li><a href="#">Classes</a>
+                <ul class="dropdown">
+                    <li><a href="#">ADD CLASSES</a></li>
+                    <li><a href="#">VIEW CLASSES</a></li>
+
+                </ul>
+            </li>
+
+            <li><a href="#">NUTRITIONS & SUPPLEMENTS</a>
+                <ul class="dropdown">
+                    <li><a href="/admin/admin-addproduct">ADD SUPPLEMENTS</a></li>
+                    <li><a href="/admin/admin-viewproducts">VIEW SUPPLEMENTS</a></li>
+
+                </ul>
+            </li>
+
+            <li><a href="#">COUPONS</a>
+                <ul class="dropdown">
+                    <li><a href="/admin/add_coupons">ADD COUPONS</a></li>
+                    <li><a href="/admin/view_coupons">VIEW COUPONS</a></li>
+
+                </ul>
+            </li>
+
+            <li><a href="#">USERS</a>
+                <ul class="dropdown">
+                    <li><a href="/admin/admin-adduser">ADD USERS</a></li>
+                    <li><a href="/admin/admin-viewusers">VIEW USERS</a></li>
+                    <li><a href="/admin/admin-blockuser">BLOCK OR UNBLOCK USERS</a></li>
+                    <li><a href="/admin/admin-view-userorders">USER ORDERS</a></li>
+
+                </ul>
+            </li>
+
+            <li><a href="#">BLOGS</a>
+                <ul class="dropdown">
+                    <li><a href="#">ADD BLOGS</a></li>
+                    <li><a href="#">VIEW BLOGS</a></li>
+                </ul>
+            </li>
+
+            {{#if admin}}
+            <li><a href="#">{{admin.name}}</a>
+                <ul class="dropdown">
+                    <li><a href="#">PROFILE</a></li>
+                    <li><a href="/admin/dashboard">DASHBOARD</a></li>
+                    <li><a href="/admin/admin-logout">LOGOUT</a></li>
+
+                </ul>
+            </li>
+
+            {{/if}}
+            {{#if notAdmin}}
+            <li><a href="#">ACCOUNT</a>
+
+                <ul class="dropdown">
+                    <li><a href="admin/admin-login">LOGIN</a></li>
+                    {{!-- <li><a href="#">PROFILE</a></li>
+                    <li><a href="#">NEW USERS</a></li>
+                    <li><a href="#">LOGOUT</a></li> --}}
+
+                </ul>
+
+            </li>
+            {{/if}}
+
+
+        </ul>
+    </nav>
+    <div id="mobile-menu-wrap"></div>
+    <div class="canvas-social">
+        <a href="#"><i class="bi bi-facebook"></i></a>
+        <a href="#"><i class="bi bi-twitter"></i></i></a>
+        <a href="#"><i class="bi bi-linkedin"></i></a>
+        <a href="#"><i class="bi bi-instagram"></i></a>
+    </div>
+</div>
+<!-- Offcanvas Menu Section End -->
+
+<!-- Header Section Begin -->
+<header class="header-section">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="logo">
+                    <a href="/admin">
+                        <h1 style="font-size: 2rem; font-weight: bolder; color: #fff;">Admin <span
+                                style="color: #f36100;">Panel</h1></span>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <nav class="nav-menu ">
+                    <ul>
+                        <li><a href="/admin">Home</a></li>
+                        {{!-- <li><a href="./classes.html">Classes</a></li>
+                        <li><a href="/view-products">Nutrition & Supplements</a></li>
+                        <li><a href="./team.html">Coaches</a></li>
+                        <li><a href="./about-us.html">Blogs</a></li>
+                        <li><a href="./contact.html">Contact</a></li> --}}
+                        <li><a href="#">Classes</a>
+                            <ul class="dropdown">
+                                <li><a href="#">ADD CLASSES</a></li>
+                                <li><a href="#">VIEW CLASSES</a></li>
+
+                            </ul>
+                        </li>
+
+                        <li><a href="#">NUTRITIONS & SUPPLEMENTS</a>
+                            <ul class="dropdown">
+                                <li><a href="/admin/admin-addproduct">ADD SUPPLEMENTS</a></li>
+                                <li><a href="/admin/admin-viewproducts">VIEW SUPPLEMENTS</a></li>
+
+                            </ul>
+                        </li>
+
+                        <li><a href="#">COUPONS</a>
+                            <ul class="dropdown">
+                                <li><a href="/admin/add_coupons">ADD COUPONS</a></li>
+                                <li><a href="/admin/view_coupons">VIEW COUPONS</a></li>
+
+                            </ul>
+                        </li>
+
+                        <li><a href="#">USERS</a>
+                            <ul class="dropdown">
+                                <li><a href="/admin/admin-adduser">ADD USERS</a></li>
+                                <li><a href="/admin/admin-viewusers">VIEW USERS</a></li>
+                                <li><a href="/admin/admin-blockuser">BLOCK OR UNBLOCK USERS</a></li>
+                                <li><a href="/admin/admin-view-userorders">USER ORDERS</a></li>
+
+                            </ul>
+                        </li>
+
+                        <li><a href="#">BLOGS</a>
+                            <ul class="dropdown">
+                                <li><a href="#">ADD BLOGS</a></li>
+                                <li><a href="#">VIEW BLOGS</a></li>
+                            </ul>
+                        </li>
+
+                        {{#if admin}}
+                        <li><a href="#">{{admin.name}}</a>
+                            <ul class="dropdown">
+                                <li><a href="#">PROFILE</a></li>
+                                <li><a href="/admin/dashboard">DASHBOARD</a></li>
+                                <li><a href="/admin/admin-logout">LOGOUT</a></li>
+
+                            </ul>
+                        </li>
+
+                        {{/if}}
+                        {{#if notAdmin}}
+                        <li><a href="#">ACCOUNT</a>
+
+                            <ul class="dropdown">
+                                <li><a href="admin/admin-login">LOGIN</a></li>
+                                {{!-- <li><a href="#">PROFILE</a></li>
+                                <li><a href="#">NEW USERS</a></li>
+                                <li><a href="#">LOGOUT</a></li> --}}
+
+                            </ul>
+
+                        </li>
+                        {{/if}}
+
+
+                    </ul>
+                </nav>
+            </div>
+            <div class="col-lg-3">
+                <div class="top-option">
+                    <div class="to-search search-switch">
+                        <i class="bi bi-search"></i>
+                    </div>
+                    <div class="to-social">
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-twitter"></i></a>
+                        <a href="#"><i class="bi bi-linkedin"></i></a>
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="canvas-open">
+            <i class="fa fa-bars"></i>
+        </div>
+    </div>
+</header>
+<!-- Header End -->

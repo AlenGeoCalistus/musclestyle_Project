@@ -1,0 +1,255 @@
+<!-- Breadcrumb Section Begin -->
+<section class="breadcrumb-section set-bg" data-setbg="img/breadcrumb-bg.jpg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <div class="breadcrumb-text">
+                    <h2>Cart</h2>
+                    <div class="bt-option">
+                        <a href="./index.html">Home</a>
+                        <a href="#">User</a>
+                        <span>Cart</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Breadcrumb Section End -->
+
+<section class="blog-section spad">
+    <div class="container mt-5">
+        <div class="row">
+
+            <div class="col-lg-8 p-0">
+
+                <div class="blog-item">
+                     {{#each products}}
+                    {{!-- jjjjjjjjjjjjjjjjj --}}
+
+                    <div class="container ">
+                        <!-- Card Start -->
+                        <div style="margin-top: 7px;" class="card">
+                            <div style="background: #151515;" class="row ">
+                                
+                                <div class="col-md-7 px-3">
+                                   
+
+                                    <div class="card-block px-6">
+                                        {{!-- <h4 class="card-title">Horizontal Card with Carousel - Bootstrap 4 </h4>
+                                        <p class="card-text">
+                                            The Carousel code can be replaced with an img src, no problem. The added CSS
+                                            brings shadow to the card and some adjustments to the prev/next buttons and
+                                            the indicators is rounded now. As in Bootstrap 3
+                                        </p>
+                                        <p class="card-text">Made for usage, commonly searched for. Fork, like and use
+                                            it. Just move the carousel div above the col containing the text for left
+                                            alignment of images</p>
+                                        <br>
+                                        <a href="#" class="mt-auto btn btn-primary  ">Read More</a> --}}
+                                        <div style="border:none ;" class="bi-text px-6 ">
+                                            <h5 style="font-size: 2rem;"><a style="font-size: 2rem;"
+                                                    href="#">{{this.product.brand}}</a></h5>
+                                            <h5 style="font-size: 2rem;"><a href="#">{{this.product.name}}</a></h5>
+                                            <p class="card-text">{{this.product.discription}}</p>
+                                            <br>
+
+                                            <p style="font-size: 1rem;"><i class="fas fa-rupee-sign"></i> {{
+                                                this.product.price}}</p>
+                                            {{#if this.product.offer}}
+                                            <p>{{this.product.discount}}%off</p>
+                                            {{/if}}
+
+
+                                        </div>
+                                        <div class="text-center mx-auto my-3">
+                                            <button id="CheckoutBtn"
+                                                onclick="removeProduct('{{this._id}}','{{this.product._id}}','{{../user._id}}')"
+                                                class="primary-btn btn-normal">Remove</button>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                <!-- Carousel start -->
+
+                                <div class="col-md-5">
+                                    {{!-- {{#each products}} --}}
+                                    <div id="CarouselTest" class="carousel slide" data-ride="carousel">
+                                        <ol class="carousel-indicators">
+
+
+                                        </ol>
+                                        <div class="carousel-inner">
+                                            <div class="carousel-item active">
+
+                                                <img style="margin-left: 30px; margin-top: 20px;"
+                                                    src="/product-images/{{this.product._id}}.jpg" alt="">
+                                            </div>
+
+                                            </a>
+                                        </div>
+                                    </div>
+                                    {{!-- {{/each}} --}}
+                                </div>
+                                <!-- End of carousel -->
+                                
+                            </div>
+                        </div>
+                        <!-- End of card -->
+
+                    </div>
+
+
+
+                    <br>
+                    <br>
+
+                    {{!-- jjjjjjjjjjjjjjjjj --}}
+                    {{!-- {{#each products}} --}}
+                    {{!-- <div class="bi-pic"> --}}
+                        {{!-- <img src="/product-images/{{this.product._id}}.jpg" alt=""> --}}
+                        {{!-- </div> --}}
+                    {{!-- <div class="bi-text mb-2"> --}}
+                        {{!-- <h5><a href="#">{{this.product.brand}}</a></h5> --}}
+
+                        {{!-- <p>{{this.product.discription}}</p> --}}
+                        {{!-- <p>{{this.product.price}}</p> --}}
+                        {{!-- {{#if this.product.offer}} --}}
+                        {{!-- <p>{{this.product.discount}}%off</p> --}}
+                        {{!-- {{/if}} --}}
+
+                        {{!-- <div class="text-center mx-auto my-3"> --}}
+
+                            {{!-- <a onclick="" href="/user-removeproduct/{{this.product._id}}"
+                                class="primary-btn btn-normal">Remove</a> --}}
+                            {{!-- <button
+                                onclick="removeProduct('{{this._id}}','{{this.product._id}}','{{../user._id}}')" --}}
+                                {{!-- class="primary-btn btn-normal">Remove</button> --}}
+                            {{!-- </div> --}}
+                        {{!-- </div> --}}
+                    {{!-- {{/each}} --}}
+{{/each}}
+                </div>
+
+            </div>
+            <div class="col-lg-4 col-md-8 p-0">
+                <div class="sidebar-option">
+                    <div class="so-categories ">
+                        <h5 class="title">Price Details</h5>
+                        <ul>
+
+                            {{#each products}}
+                            <li><a href="#">Brand <span>{{this.product.brand}}</span></a></li>
+                            <li>
+                                <a href="#">Name <span>{{this.product.name}}</span></a>
+                            </li>
+
+                            <li><a>Quantity</a>
+
+                                <div style="float: right;">
+                                    <button
+                                        style=" margin-right: 0.5rem; border-style: none; border-radius: 100%; background-color: #151515; color: #c4c4c4; font-size: 20px;"
+                                        class=" bi bi-dash-square"
+                                        onclick="changeQuantity('{{this._id}}','{{this.product._id}}','{{../user._id}}',-1)"></button>
+
+                                    <span style="color: #c4c4c4; font-size: 14px;"
+                                        id="{{this.product._id}}">{{this.quantity}}</span>
+
+
+                                    <button
+                                        style="margin-left: 0.5rem; border-style: none; border-radius: 100%; background-color: #151515; color: #c4c4c4;font-size: 20px"
+                                        class=" ml-3 bi bi-plus-square"
+                                        onclick="changeQuantity('{{this._id}}','{{this.product._id}}','{{../user._id}}',1)"></button>
+                                </div>
+                            </li>
+                            <li><a  href="#">Price <span> <i class="fas fa-rupee-sign card-text "></i>
+                                        {{this.product.price}}</span></a></li>
+
+                            {{#if this.product.offer}}
+
+                            <li>
+                                <a href="#">Discount <span>{{this.product.discount}} %</span></a>
+                            </li>
+
+                            {{/if}}
+
+                            {{/each}}
+
+                            {{#if myCouponStatus}}
+                            <li>
+                                <a href="#"><span>{{this.product.discount}} </span></a>
+                            </li>
+                            {{else}}
+                            <li>
+                                <a href="/applyCoupons">Apply Coupons <span>{{this.product.discount}} </span></a>
+                            </li>
+
+                            {{/if}}
+                        </ul>
+                        <br><br>
+
+                    </div>
+
+                    <div class="so-categories">
+                        <h5 style="margin-top: -3.5rem;" class="title">Total Amount<span id="total"
+                                style="margin-left: 5.7rem;"><i class="fas fa-rupee-sign card-text "></i>
+                                {{cartTotal}} </h5></span>
+
+                        <a id="CheckoutBtn" href="/user-buynow" class="primary-btn btn-normal">Proceed To Checkout</a>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    function changeQuantity(cartId, prodId, userId, count) {
+        let quantity = parseInt(document.getElementById(prodId).innerHTML)
+        count = parseInt(count)
+        $.ajax({
+            url: '/change-product-quantity',
+            data: {
+                user: userId,
+                cart: cartId,
+                product: prodId,
+                count: count,
+                quantity: quantity,
+
+            },
+            method: 'post',
+            success: (response) => {
+                if (response.removeProduct) {
+                    alert("Product removed from cart")
+                    location.reload()
+                } else {
+                    document.getElementById(prodId).innerHTML = quantity + count
+                    document.getElementById('total').innerHTML = response.total
+                }
+            }
+        })
+    }
+
+    function removeProduct(cartId, prodId, userId, count) {
+        let quantity = parseInt(document.getElementById(prodId).innerHTML)
+        count = parseInt(count)
+        $.ajax({
+            url: '/removeCartProduct',
+            data: {
+                user: userId,
+                cart: cartId,
+                product: prodId,
+                quantity: quantity
+            },
+            method: 'post',
+            success: (response) => {
+                if (response.removeProduct) {
+                    alert("Product removed from cart")
+                    location.reload()
+                }
+            }
+        })
+    }
+</script>

@@ -1,0 +1,40 @@
+<!-- Breadcrumb Section Begin -->
+<section class="breadcrumb-section set-bg" data-setbg="/img/breadcrumb-bg.jpg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <div class="breadcrumb-text">
+                    <h2>Add User</h2>
+                    <div class="bt-option">
+                        <a href="#">Home</a>
+                        <a href="#">Admin</a>
+                        <span>Add User</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Breadcrumb Section End -->
+
+<section class="contact-section spad">
+    <div class="container mb-5 p-5">
+        <div class="row border">
+            <div class="col-lg-6 mt-5 text-center mx-auto mb-5">
+                <div class="section-title contact-title text-center">
+                    <span>This action will add a new user ! </span>
+                    <h2>Add User</h2>
+                    <div class="leave-comment mt-5 text-center mb-5">
+
+                        <form action="/admin/admin-adduser" method="post" enctype="multipart/form-data">
+                            <input type="text" name="name"  placeholder="Name"/>
+                            <input type="text" name="email" placeholder="Email"/>
+                            <input type="text" name="phone" placeholder="Contact Number"/>
+                            <input type="text" name="password" placeholder="Password"/>
+
+                            <button type="submit">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+</section>

@@ -1,0 +1,50 @@
+<!-- Breadcrumb Section Begin -->
+<section class="breadcrumb-section set-bg" data-setbg="/img/breadcrumb-bg.jpg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <div class="breadcrumb-text">
+                    <h2>View Coupons</h2>
+                    <div class="bt-option"> 
+                        <a href="#">Home</a>
+                        <a href="#">Admin</a>
+                        <span>View Coupons</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Breadcrumb Section End -->
+
+<section style="background: #151515;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-12 mt-5">
+                <table class="table table-dark table-striped border-dark" id="adminProductsTable" style="background: #151515;">
+                    <thead class="t-head text-center ad-tableHead">
+                        <tr>
+                            <th scope="col">Coupon Code</th>
+                            <th scope="col">Discount Value</th>
+                            <th scope="col">Offer Status</th>
+                            <th scope="col">Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody class="t-body" style="color: #a9a9a9;">
+                        {{#each allCoupons}}
+                        <tr class="ad-tableContents">
+
+                            <td class="text-center table-data">{{this.coupon.couponcode}}</td>
+                            <td class="text-center table-data">{{this.coupon.discountvalue}}</td>
+                            <td class="text-center table-data">{{this.coupon.offer}}</td>
+                            <td class="text-center"><a href="/admin/deletecoupon/{{this._id}}" class="btn btn-sm"
+                                    style="font-size: smaller; background: #f36100;"
+                                    onclick="return confirm('Do you want to delete coupon {{this.name}} ?')">Delete</a></td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>

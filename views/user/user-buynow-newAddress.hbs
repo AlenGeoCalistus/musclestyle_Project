@@ -1,0 +1,186 @@
+<!-- Breadcrumb Section Begin -->
+<section class="breadcrumb-section set-bg" data-setbg="/img/breadcrumb-bg.jpg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <div class="breadcrumb-text">
+                    <h2>Proceed To Checkout</h2>
+                    <div class="bt-option">
+                        <a href="/">Home</a>
+                        <span>Proceed To Checkout</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Breadcrumb Section End -->
+
+<section style="background: #151515;">
+    <div class="container ">
+        <form action="" id="checkout-form">
+            <div class="row">
+                <div class="col-md-6" style="color: #c4c4c4;">
+
+                    <h4 style="color: #c4c4c4; font-weight: bold;" class="text-center mt-5 mb-3">Enter Delivery Address
+                    </h4>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="text" name="userId" id="" value="{{user._id}}" hidden>
+                            <label for="inputEmail4">Name</label>
+                            <input style="background: #151515; border-radius: 0%;" type="text" class="form-control"
+                                name="name" placeholder="Name" value="{{newaddress.name}}" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputPassword4">Address</label>
+                            <input style="background: #151515; border-radius: 0%;" type="text" class="form-control"
+                                name="address" placeholder="1234 Main St" value="{{newaddress.address}}" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputAddress">Contact</label>
+                        <input style="background: #151515; border-radius: 0%;" type="number" class="form-control"
+                            name="phone" placeholder="Contact number" value="{{newaddress.phone}}" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputCity">City</label>
+                            <input style="background: #151515; border-radius: 0%;" type="text" class="form-control"
+                                name="city" placeholder="City" value="{{newaddress.city}}" required>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputState">State</label>
+                            <select style="background: #151515; border-radius: 0%;" name="state" class="form-control"
+                                required>
+                                <option>{{newaddress.state}}</option>
+                                <option>Kerala</option>
+                                <option>Tamil Nadu</option>
+                                <option>Karnataka</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputZip">Pincode</label>
+                            <input style="background: #151515; border-radius: 0%;" type="number" class="form-control"
+                                name="pincode" placeholder="Pincode" value="{{newaddress.pincode}}" required>
+                        </div>
+
+                    </div>
+                    <div class="form-group col-md-6 mt-5" style="float: right;">
+                        <a href="/changeAddress" id="changeAddress" 
+                            class="btn btn-danger mt-3 mb-4" type="submit">Change
+                            Address</a>
+                    </div>
+                    <div class="form-group col-md-6 mt-5 pl-0">
+                       <a href="/addnew-address" id="newAddress"
+                            class="btn btn-danger mt-3 mb-4" type=""><i class="bi bi-house pr-2"></i>New
+                            Address</a>
+                    </div>
+                </div>
+
+                <div class="col-md-6" style="color: #c4c4c4;">
+                    <div class="container border mt-5 checkout" style="margin-top: 103px;">
+                        <h5 style="color: #c4c4c4; font-weight: bold;" class="mt-3">Price Details</h5>
+                        <hr>
+                        <div class="payment">
+                            <p>Payment Method</p>
+                        </div>
+                        <div>
+                            <label class="radio-inline">
+                                <input style="color: #c4c4c4; " type="radio" name="payment-method" value="COD"
+                                    Checked>COD
+                            </label>
+                        </div>
+                        <div>
+                            <label class="radio-inline">
+                                <input type="radio" name="payment-method" value="ONLINE">Online Payment
+                            </label>
+                        </div>
+                        <hr>
+                        <div class="col-md-6">
+
+                            <p style="font-size: 0.8rem; font-weight: bold;"> Total Payable <i
+                                    class="fas fa-rupee-sign card-text ml-2"></i> {{ total}}</p>
+                        </div>
+                        <div class="col-md-2">
+                            <span> <button id="CheckoutBtn" class="btn btn-danger mt-3 mb-4 ml-auto"
+                                    type="submit">CHECKOUT</button></span>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</section>
+<script>
+    $("#checkout-form").submit((e) => {
+        e.preventDefault()
+        $.ajax({
+            url: '/user-buynow',
+            method: 'post',
+            data: $('#checkout-form').serialize(),
+            success: (response) => {
+                alert(response) 
+                if (response.codSuccess) {
+                    location.href = '/order-placed'
+                } else {
+                    razorpayPayment(response)
+                }
+            }
+        })
+    })
+    function razorpayPayment(order) {
+        var options = {
+            "key": "rzp_test_lST5YpC1PFeGOy", // Enter the Key ID generated from the Dashboard
+            "amount": "50000", // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+            "currency": "INR",
+            "name": "LapKart",
+            "description": "Test Transaction",
+            {{!-- "image":  "https://example.com/your_logo", --}}
+            "order_id": order.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+            "handler": function (response) {
+                {
+                    {
+                        {{!-- alert(response.razorpay_payment_id);
+                        alert(response.razorpay_order_id);
+                        alert(response.razorpay_signature) --}}
+                    }
+                }
+
+                verifyPayment(response, order)
+            },
+            "prefill": {
+                "name": "Gaurav Kumar",
+                "email": "gaurav.kumar@example.com",
+                "contact": "9999999999"
+            },
+            "notes": {
+                "address": "Razorpay Corporate Office"
+            },
+            "theme": {
+                "color": "#3399cc"
+            }
+        };
+        var rzp1 = new Razorpay(options);
+        rzp1.open();
+
+    }
+    function verifyPayment(payment, order) {
+        $.ajax({
+            url: '/verify-payment',
+            data: {
+                payment,
+                order
+            },
+            method: 'post',
+            success:(response)=>{
+                if(response.status){
+                    location.href = '/order-placed'
+                }else{
+                    alert("Payment Failed. Retry Again")
+                }
+            }
+        })
+    }
+</script>

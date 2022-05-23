@@ -1,0 +1,66 @@
+<!-- Breadcrumb Section Begin -->
+    <section class="breadcrumb-section set-bg" data-setbg="img/breadcrumb-bg.jpg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="breadcrumb-text">
+                        <h2>Login page</h2>
+                        <div class="bt-option">
+                            <a href="./index.html">Home</a>
+                            <a href="#">User</a>
+                            <span>Login</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Breadcrumb Section End -->
+
+<section class="contact-section spad">
+    <div class="container mb-5 p-5">
+        <div class="row border">
+            <div class="col-lg-6 mt-5 text-center mx-auto mb-5">
+                <div class="section-title contact-title text-center">
+                    <span>It's so nice to have you ! </span>
+                    <h2>SIGNUP FOR NEW ACCOUNT</h2>
+                    <div class="leave-comment mt-5 text-center mb-5">
+
+                        <form action="/user-signup" method="post">
+                            <div><span>{{errname}}</span></div>
+                            <input type="text" name="name" id="name" placeholder="Full Name">
+                            <input type="email" name="email" id="email" placeholder="Valid Email">
+                            <div><span>{{errphone}}</span></div>
+                            <input type="number" name="phone" id="phone" placeholder="10 Digit Contact Number">
+                            <div><span>{{errpass}}</span></div>
+                            {{!-- <input type="password" name="password" id="password" placeholder="Choose A Strong Password"> --}}
+                            <div class="input-group" id="show_hide_password">
+                                <input class="form-control" type="password" name="password" id="password" placeholder="Password">
+                                <div style="height:46px; width: 35px; border: 1px solid #363636;" class="input-group-addon my-auto ">
+                                    <a style="color: #fff; vertical-align: -9px;" href=""><i class="bi bi-eye-slash-fill" aria-hidden="true"></i></a>
+                                </div>
+                            </div>
+                            <br>
+                            <button type="submit">Signup</button>
+                        </form>
+                    </div>
+                    <a href="/user-login"><span style="text-transform: none;">Already Have An Account ? </span></a>
+                </div>
+            </div>
+</section> 
+<script>
+$(document).ready(function() {
+    $("#show_hide_password a").on('click', function(event) {
+        event.preventDefault();
+        if($('#show_hide_password input').attr("type") == "text"){
+            $('#show_hide_password input').attr('type', 'password');
+            $('#show_hide_password i').addClass( "bi bi-eye-slash-fill" );
+            $('#show_hide_password i').removeClass( "bi bi-eye-fill" );
+        }else if($('#show_hide_password input').attr("type") == "password"){
+            $('#show_hide_password input').attr('type', 'text');
+            $('#show_hide_password i').removeClass( "bi bi-eye-slash-fill" );
+            $('#show_hide_password i').addClass( "bi bi-eye-fill" );
+        }
+    });
+});
+</script>

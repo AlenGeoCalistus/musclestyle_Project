@@ -1,0 +1,72 @@
+
+<!-- Breadcrumb Section Begin -->
+<section class="breadcrumb-section set-bg" data-setbg="img/breadcrumb-bg.jpg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <div class="breadcrumb-text">
+                    <h2>Protein Powders</h2>
+                    <div class="bt-option">
+                        <a href="/">Home</a>
+                        <a href="#">User</a>
+                        <span>Proteins</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Breadcrumb Section End -->
+
+<section class="services-section spad">
+    <div class="container py-5">
+        <div class="section-title mb-5">
+            <span>Protein Powders</span>
+            <h2>High Rated Proteins</h2>
+        </div>
+        <div class="row">
+            {{#each products}}
+            <div class="col-md-12 col-lg-3 mb-4 mb-lg-0">
+                <div class="card mb-2"  style="border: 1px solid #363636;">
+                    <div class="text-center" style="background: #151515;">
+                       <a href="/image-zoom/{{this._id}}"> <img style="background:#151515;  width:200px;  height:270px; "
+                            src="/product-images/{{this._id}}.jpg" class="card-img-top mt-3" alt="protein" /></a>
+                    </div>
+                    <div class="card-body" style=" background:#252525;border: 1px solid #363636;">
+                        
+                        <div class="d-flex justify-content-between mb-3 team-title">
+                            <h4 id="cardsecbigFont" class="mb-0">{{this.brand}}</h4>
+
+                        </div>
+                        <div class="d-flex justify-content-between mb-3 team-title">
+                            <h4 id="cardsecbigFont">{{this.name}}</h4>
+                            <h5 style="color: #fff;" class="mb-0"><i class="fas fa-rupee-sign"></i> {{this.price}}</h5>
+                        </div>
+
+                        <div class="d-flex justify-content-between">
+                            <p class="small"><a href="#!"style="color: #fff;" >{{this.category}}</a></p>
+                            {{#if this.offer}}
+                            {{!-- <p class="small text-danger"><s>$1099</s></p> --}} 
+                            <p class="small text-white">{{this.discount}}%off</p>
+                            {{/if}}
+                        </div>
+
+
+                        <div class="d-flex text-center  justify-content-between mb-1">
+                            <a href="/add-to-cart/{{this._id}}"
+                                class="primary-btn btn-normal  appoinment-btn p-2"><i class="bi bi-cart my-auto" style="margin: auto;"></i>Add to
+                                Cart</a>
+                            {{!-- <div class="ms-auto text-warning">
+                                <a href="/image-zoom/{{this._id}}" class="primary-btn btn-normal appoinment-btn p-2"><i
+                                        class="bi bi-eye-fill my-auto"></i>View</a>
+                            </div> --}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+</section>
+
+

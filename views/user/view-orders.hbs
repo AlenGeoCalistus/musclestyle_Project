@@ -1,0 +1,78 @@
+<!-- Breadcrumb Section Begin -->
+<section class="breadcrumb-section set-bg" data-setbg="img/breadcrumb-bg.jpg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <div class="breadcrumb-text">
+                    <h2>View Orders</h2>
+                    <div class="bt-option">
+                        <a href="./index.html">Home</a>
+                        <a href="#">User</a>
+                        <span>View Orders</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Breadcrumb Section End -->
+
+<section style="background: #151515; ">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6 col-md-12 mt-5">
+                <table class="table  border-dark" id="adminProductsTable" style="background: #151515;">
+                    <thead class="t-head text-center" style="color: #c4c4c4; text-transform: uppercase; ">
+                        <tr>
+                            <th scope="col">Date</th> 
+                            <th scope="col">Name</th>
+                            <th scope="col">Address</th>
+                            <th scope="col">Contact</th>
+                            <th scope="col">State</th>
+                            <th scope="col">Pincode</th>
+                            <th scope="col">Amount</th>
+                            <th scope="col">Payment</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Cancel Order</th>
+                            <th scope="col">View Products</th>
+                        </tr> 
+                    </thead>
+                    <tbody class="t-body" style="font-size: 16px; color: #fff; font-weight: 600;">
+                        {{#each orders}}
+                        <tr>
+                            <td class="text-center table-data">{{this.date}}</td>
+                            <td class="text-center table-data">{{this.deliveryDetails.name}}</td>
+                            <td class="text-center table-data">{{this.deliveryDetails.address}}</td>
+                            <td class="text-center table-data">{{this.deliveryDetails.phone}}</td>
+                            <td class="text-center table-data">{{this.deliveryDetails.state}}</td>
+                            <td class="text-center table-data">{{this.deliveryDetails.pincode}}</td>
+                            <td class="text-center table-data">{{this.totalAmount}}</td>
+                            <td class="text-center table-data">{{this.paymentMethod}}</td>
+                            <td class="text-center table-data">{{this.status}}</td>
+
+                            <td class="text-center table-data">
+            </div>
+            <a style="margin-top: -1px; padding: 11px 30px 11px; margin-right: 25px;" href="/cancel-order/{{this._id}}"
+                class="primary-btn btn-normal appoinment-btn">Cancel</a>
+        </div>
+        </td>
+        <td>
+    </div>
+    <a style="margin-top: -1px; padding: 11px 30px 11px; margin-right: 25px;" href="/view-ordered-products/{{this._id}}"
+        class="primary-btn btn-normal appoinment-btn">Products</a>
+    </div>
+    </td>
+    </tr>
+    {{/each}}
+    </tbody>
+    </table>
+    </div>
+    </div>
+    </div>
+</section>
+
+<script>
+    $(function () {
+        $('#adminProductsTable').DataTable();
+    }); 
+</script>

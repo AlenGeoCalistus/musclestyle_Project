@@ -1,0 +1,64 @@
+<!-- Breadcrumb Section Begin -->
+<section class="breadcrumb-section set-bg" data-setbg="/img/breadcrumb-bg.jpg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <div class="breadcrumb-text">
+                    <h2>Login page</h2>
+                    <div class="bt-option">
+                        <a href="./index.html">Home</a>
+                        <a href="#">User</a>
+                        <span>Login</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Breadcrumb Section End -->
+
+<section class="contact-section spad">
+    <div class="container mb-5 p-5">
+        <div class="row border">
+            <div class="col-lg-6 mt-5 text-center mx-auto mb-5">
+                <div class="section-title contact-title text-center">
+                    <span>This action cannot be reversed ! </span>
+                    <h2>Edit product</h2>
+                    <div class="leave-comment mt-5 text-center mb-5">
+
+                        <form action="/admin/admin-editproduct/{{product._id}}" method="post"
+                            enctype="multipart/form-data">
+                            <input type="text" name="brand" value="{{product.brand}}" />
+                            <input type="text" name="name" value="{{product.name}}" />
+                            <input type="text" name="category" value="{{product.category}}" />
+                            <input type="text" name="discription" value="{{product.discription}}" />
+                            <input type="text" name="price" value="{{product.price}}" />
+
+                            <div class="form-row">
+                                <div class="form-group col-md-10">
+                                    <input style="background: #151515; border-radius: 0%;" type="number"
+                                        class="form-control" name="discount"
+                                        placeholder="Enter Discout Amount in Percentage">
+                                </div> 
+
+                                <div class="form-group col-md-2">
+                                    <input style="background: #151515; border-radius: 0%;" type="checkbox"
+                                        class="form-control" name="offer" value="true" checked>
+                                </div>
+
+                            </div>
+                            <img src="/product-images/{{product._id}}.jpg" alt="" style="width: 100px;height: auto;"
+                                id="imgView">
+                            <input type="file" name="image" class="form-control" onchange="viewImage(event)">
+
+                            <button type="submit">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+</section>
+<script>
+    function viewImage(event) {
+        document.getElementById('imgView').src = URL.createObjectURL(event.target.files[0])
+    }
+</script>

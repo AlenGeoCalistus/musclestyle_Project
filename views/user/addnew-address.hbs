@@ -1,0 +1,84 @@
+<!-- Breadcrumb Section Begin -->
+<section class="breadcrumb-section set-bg" data-setbg="/img/breadcrumb-bg.jpg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <div class="breadcrumb-text">
+                    <h2>Add New Address</h2>
+                    <div class="bt-option">
+                        <a href="/">Home</a>
+                        <span>Add New Address</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Breadcrumb Section End -->
+
+<section style="background: #151515;">
+    <div class="container ">
+        <form action="/addnew-address" method="post" enctype="multipart/form-data" id="checkout-form">
+            <div class="row">
+                <div class="col-md-12" style="color: #c4c4c4;">
+
+                    <h4 style="color: #c4c4c4; font-weight: bold;" class="text-center mt-5 mb-3">Enter New Delivery
+                        Address
+                    </h4>
+                        <div class="form-group">
+                            {{!-- <input type="text" name="userId" id="" value="{{user._id}}" hidden> --}}
+                            <label for="inputEmail4">Name</label>
+                            <input style="background: #151515; border-radius: 0%;" type="text" class="form-control"
+                                name="name" placeholder="Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputPassword4">Address</label>
+                            <input style="background: #151515; border-radius: 0%;" type="text" class="form-control"
+                                name="address" placeholder="1234 Main St" required>
+                        </div>
+                        {{!--
+                    </div> --}}
+                    <div class="form-group">
+                        <label for="inputAddress">Contact</label>
+                        <input style="background: #151515; border-radius: 0%;" type="number" class="form-control"
+                            name="phone" placeholder="Contact number" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputCity">City</label>
+                            <input style="background: #151515; border-radius: 0%;" type="text" class="form-control"
+                                name="city" placeholder="City" required>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputState">State</label>
+                            <select style="background: #151515; border-radius: 0%;" name="state" class="form-control"
+                                required>
+                                <option>...</option>
+                                <option>Kerala</option>
+                                <option>Tamil Nadu</option>
+                                <option>Karnataka</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputZip">Pincode</label>
+                            <input style="background: #151515; border-radius: 0%;" type="number" class="form-control"
+                                name="pincode" placeholder="Pincode" required>
+                        </div>
+
+                    </div>
+                    {{!-- <div class="form-group col-md-6 mt-5" style="float: right;">
+                        <button id="changeAddress" class="btn btn-danger mt-3 mb-4" type="submit">Change
+                            Address</button>
+                    </div> --}}
+                    <div class="form-group col-md-6 mt-5 pl-0">
+                        <button id="newAddress" class="btn btn-danger mt-3 mb-4" type="submit"><i
+                                class="bi bi-house pr-2"></i>Save
+                            Address</button>
+                    </div>
+                </div>
+
+            </div>
+        </form>
+    </div>
+
+</section>
